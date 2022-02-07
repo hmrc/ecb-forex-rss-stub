@@ -94,5 +94,14 @@ class ExchangeRateGeneratorTest extends AnyWordSpec with Matchers {
 
       dates.forall(date => ExchangeRateGenerator.isWeekday(date)) mustBe true
     }
+
+    "return the same exchange rates each time" in {
+
+      val exchangeRates1 = ExchangeRateGenerator.getExchangeRates(10, initialRate, range, LocalDateTime.now())
+      val exchangeRates2 = ExchangeRateGenerator.getExchangeRates(10, initialRate, range, LocalDateTime.now().minusDays(10))
+
+      exchangeRates1.zip(exchangeRates2).forall(exchangeRateTuple => exchangeRateTuple._1.rate == exchangeRateTuple._2.rate) mustBe true
+
+    }
   }
 }

@@ -32,7 +32,9 @@ object ExchangeRateGenerator {
 
   def getExchangeRates(length: Int, baseRate: Double, range: Double, endDate: LocalDateTime): Seq[ExchangeRate] = {
 
-    def randomRate = baseRate + ((Random.nextDouble() - 0.5) * range)
+    val random = new Random(42)
+
+    def randomRate = baseRate + ((random.nextDouble() - 0.5) * range)
 
     val dates = getWeekdayDates(length, endDate, Seq.empty)
       .map(day => formatter.format(day))
