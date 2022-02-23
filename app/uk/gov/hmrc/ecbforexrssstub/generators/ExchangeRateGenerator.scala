@@ -18,7 +18,7 @@ package uk.gov.hmrc.ecbforexrssstub.generators
 
 import uk.gov.hmrc.ecbforexrssstub.models.ExchangeRate
 
-import java.time.{Duration, LocalDateTime}
+import java.time.{DayOfWeek, Duration, LocalDateTime}
 import java.time.format.DateTimeFormatter
 import scala.annotation.tailrec
 import scala.util.Random
@@ -48,9 +48,14 @@ object ExchangeRateGenerator {
   }
 
   private[generators] def isWeekday(localDateTime: LocalDateTime): Boolean = {
-    val saturday = LocalDateTime.of(2000, 1, 1, 0, 0)
-    val duration = Duration.between(saturday, localDateTime).toDays
-    duration % 7 != 0 && duration % 8 != 0
+    val weekdays = Seq(
+      DayOfWeek.MONDAY,
+      DayOfWeek.TUESDAY,
+      DayOfWeek.WEDNESDAY,
+      DayOfWeek.THURSDAY,
+      DayOfWeek.FRIDAY
+    )
+    weekdays.contains(localDateTime.getDayOfWeek)
   }
 
   @tailrec

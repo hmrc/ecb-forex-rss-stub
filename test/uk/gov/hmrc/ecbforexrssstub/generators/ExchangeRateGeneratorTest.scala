@@ -84,6 +84,8 @@ class ExchangeRateGeneratorTest extends AnyWordSpec with Matchers {
       ExchangeRateGenerator.isWeekday(LocalDateTime.of(2022, 2, 5, 0, 0)) mustBe false
       ExchangeRateGenerator.isWeekday(LocalDateTime.of(2022, 2, 6, 0, 0)) mustBe false
       ExchangeRateGenerator.isWeekday(LocalDateTime.of(2022, 2, 7, 0, 0)) mustBe true
+      ExchangeRateGenerator.isWeekday(LocalDateTime.of(2022, 2, 20, 0, 0)) mustBe false
+      ExchangeRateGenerator.isWeekday(LocalDateTime.of(2022, 2, 22, 0, 0)) mustBe true
     }
 
     "not include weekends in exchange rates" in {
