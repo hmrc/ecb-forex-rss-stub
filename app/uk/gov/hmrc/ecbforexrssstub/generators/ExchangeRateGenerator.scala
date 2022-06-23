@@ -18,8 +18,8 @@ package uk.gov.hmrc.ecbforexrssstub.generators
 
 import uk.gov.hmrc.ecbforexrssstub.models.ExchangeRate
 
-import java.time.{DayOfWeek, Duration, LocalDateTime}
 import java.time.format.DateTimeFormatter
+import java.time.{DayOfWeek, LocalDateTime}
 import scala.annotation.tailrec
 import scala.util.Random
 
