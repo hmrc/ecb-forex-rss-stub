@@ -29,8 +29,7 @@ import scala.concurrent.Future
 class RssFeedController @Inject()(cc: ControllerComponents, appConfig: AppConfig)
     extends BackendController(cc) {
 
-  def get(): Action[AnyContent] = Action.async { implicit request =>
-
+  def get(): Action[AnyContent] = Action.async {
     val rates = ExchangeRateGenerator.getExchangeRates(appConfig.length, appConfig.baseRate, appConfig.range)
 
     Future.successful(Ok(ForexRss.of(rates)).as("application/xml"))
