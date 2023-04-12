@@ -1,3 +1,3 @@
 # microservice specific routes
 
-GET        /rss/fxref-gbp.html                  uk.gov.hmrc.ecbforexrssstub.controllers.RssFeedController.get
+GET        /rss/fxref-gbp.html                  uk.gov.hmrc.ecbforexrssstub.controllers.RssFeedController.get()
