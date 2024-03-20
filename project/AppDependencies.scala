@@ -1,17 +1,17 @@
 import play.core.PlayVersion
 import play.sbt.PlayImport._
 import sbt.Keys.libraryDependencies
-import sbt._
+import sbt.*
 
 object AppDependencies {
 
   val compile = Seq(
-    "uk.gov.hmrc"             %% "bootstrap-backend-play-28"  % "7.15.0"
+    "uk.gov.hmrc"             %% "bootstrap-backend-play-30"  % "8.4.0"
   )
 
   val test = Seq(
-    "uk.gov.hmrc"             %% "bootstrap-test-play-28"     % "7.15.0",
-    "com.vladsch.flexmark"    %  "flexmark-all"               % "0.62.2",
-    "org.scalatest"           %% "scalatest"                  % "3.2.12"
+    "uk.gov.hmrc"             %% "bootstrap-test-play-30"     % "8.4.0",
+    "com.vladsch.flexmark"    %  "flexmark-all"               % "0.64.6",
+    "org.scalatest"           %% "scalatest"                  % "3.2.15"
   ).map(_ % "test, it")
 }
