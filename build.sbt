@@ -17,6 +17,7 @@ lazy val microservice = Project(appName, file("."))
   .settings(inConfig(Test)(testSettings): _*)
   .settings(resolvers += Resolver.jcenterRepo)
   .settings(PlayKeys.playDefaultPort := 10198)
+  .settings(scalacOptions ++= Seq("-Wconf:msg=Flag.*repeatedly:s", "-Wconf:src=routes/.*:s"))
 
 lazy val itSettings = Defaults.itSettings ++ Seq(
   unmanagedSourceDirectories := Seq(
