@@ -18,13 +18,11 @@ package uk.gov.hmrc.ecbforexrssstub.config
 
 import javax.inject.{Inject, Singleton}
 import play.api.Configuration
-import uk.gov.hmrc.play.bootstrap.config.ServicesConfig
 
 @Singleton
 class AppConfig @Inject()
   (
-    config: Configuration,
-    servicesConfig: ServicesConfig
+    config: Configuration
   ) {
 
   val baseRate: Double = config.get[Double]("settings.baseRate")
