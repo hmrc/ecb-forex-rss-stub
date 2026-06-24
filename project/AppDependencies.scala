@@ -6,7 +6,7 @@ import sbt.*
 object AppDependencies {
 
   val compile = Seq(
-    "uk.gov.hmrc"             %% "bootstrap-backend-play-30"  % "9.9.0"
+    "uk.gov.hmrc"             %% "bootstrap-backend-play-30"  % "10.7.0"
   )
 
   val test = Seq(
